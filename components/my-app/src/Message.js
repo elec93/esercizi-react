@@ -8,5 +8,6 @@ class Message extends React.Component {
             </div>
         )
     }
+    
 }
 export default Message
