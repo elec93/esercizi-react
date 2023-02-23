@@ -2,12 +2,14 @@ import React from "react";
 import Hello from "./Hello"
 import Welcome from "./Welcome"
 
+const theName = "Tony";
+
 class App extends React.Component {
     render() {
         return (
             <div>
                 <Hello />
-                <Welcome name='Tony' age={11} />
+                <Welcome name={theName} age={11} />
             </div>
         )
     }
