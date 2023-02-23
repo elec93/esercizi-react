@@ -1,6 +1,1 @@
-What happens if no name prop is passed to the Welcome component? 
-- Esce la scritta, ma senza nome
-
-Can you set a default value for the name prop?
-- Si, usando ad esempio Welcome.defaultProps = { name: "Tony"} 
-o col rendering condizionale
+Modify the Welcome component so that it receives a second prop called age and renders it below the 'welcome' message, within a p tag after the message "Your age is ".
