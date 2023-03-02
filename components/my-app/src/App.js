@@ -1,18 +1,18 @@
 import React from "react";
-import Hello from "./Hello"
-import Welcome from "./Welcome"
+import Hello from "./Hello";
+import Welcome from "./Welcome";
 
-const theName = "Tony";
+const theName = "John";
 
 class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Hello />
-                <Welcome name={theName} age={37} />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <Hello />
+        <Welcome name={theName} age={37} />
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;
