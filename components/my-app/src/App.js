@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter />
+        <Counter value={0} interval={1000} amount={1} />
       </div>
     );
   }

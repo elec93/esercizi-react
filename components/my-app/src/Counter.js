@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  state = { count: 0 };
+  state = { count: this.props.value };
 
   constructor(props) {
     super(props);
     setInterval(() => {
-      this.setState({ count: this.state.count + 1 });
-    }, 1000);
+      this.setState({ count: this.state.count + this.props.amount });
+    }, this.props.interval);
   }
 
   render() {
-    return <h1>{this.state.count}</h1>;
+    return <h1>{this.state.count}</h1>
   }
 }
 
