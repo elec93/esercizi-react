@@ -23,14 +23,6 @@ class Login extends Component {
     return this.state.username === "" || this.state.password === "";
   };
 
-  handleReset = () => {
-    this.setState({
-      username: "",
-      password: "",
-      remember: false,
-    });
-  };
-
   render() {
     return (
       <div>
