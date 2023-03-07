@@ -20,7 +20,7 @@ class Login extends Component {
   };
 
   handleDisabled = () => {
-    return this.state.username === "" && this.state.password === "";
+    return this.state.username === "" || this.state.password === "";
   };
 
   handleReset = () => {
