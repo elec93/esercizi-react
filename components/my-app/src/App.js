@@ -1,11 +1,15 @@
 import React from "react";
-import Login from "./Login"
+import Login from "./Login";
 
 class App extends React.Component {
+  handleOnLogin = (state) => {
+    console.log(state);
+  };
+
   render() {
     return (
       <div>
-        <Login />
+        <Login onLogin={this.handleOnLogin} />
       </div>
     );
   }

@@ -6,6 +6,7 @@ class Login extends Component {
     password: "",
     remember: false,
   };
+
   handlerInput = (event) => {
     const inputValue = event.target.value;
     const name = event.target.name;
@@ -13,6 +14,10 @@ class Login extends Component {
     this.setState({
       [name]: inputValue,
     });
+  };
+
+  handleDisabled = () => {
+    return this.state.username === "" && this.state.password === "";
   };
 
   render() {
@@ -37,6 +42,13 @@ class Login extends Component {
             type="checkbox"
             onChange={this.handlerInput}
           />
+          <button
+            name="button"
+            disabled={this.handleDisabled()}
+            onClick={() => this.props.onLogin(this.state)}
+          >
+            Login
+          </button>
         </form>
       </div>
     );
