@@ -17,7 +17,8 @@ class Login extends Component {
   };
 
   handleDisabled = () => {
-    return this.state.username === "" && this.state.password === "";
+   return this.state.username === "" && this.state.password === ""
+    
   };
 
   render() {
@@ -42,11 +43,7 @@ class Login extends Component {
             type="checkbox"
             onChange={this.handlerInput}
           />
-          <button
-            name="button"
-            disabled={this.handleDisabled()}
-            onClick={() => this.props.onLogin(this.state)}
-          >
+          <button name="button" disabled={this.handleDisabled()} onClick={() =>this.props.onLogin(this.state)}>
             Login
           </button>
         </form>
