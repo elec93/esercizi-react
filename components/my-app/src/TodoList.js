@@ -13,6 +13,7 @@ class TodoList extends Component {
 
   handlerAdd = () => {
     this.setState({ items: [...this.state.items, this.state.value] });
+    this.setState({ value: "" });
   };
 
   render() {
