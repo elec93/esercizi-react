@@ -16,6 +16,10 @@ class TodoList extends Component {
     this.setState({ value: "" });
   };
 
+  handlerReset = () => {
+    this.setState({ items: [], value: "" });
+  };
+
   render() {
     return (
       <div>
@@ -31,10 +35,10 @@ class TodoList extends Component {
           onChange={this.handlerInput}
         />
         <button onClick={this.handlerAdd}>+</button>
+        <button onClick={this.handlerReset}>Reset</button>
       </div>
     );
   }
 }
-
 
 export default TodoList;
