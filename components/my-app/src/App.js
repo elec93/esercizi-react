@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList name = {["Tony","Bob","Jane" ]}/>
+        <TodoList />
       </div>
     );
   }
