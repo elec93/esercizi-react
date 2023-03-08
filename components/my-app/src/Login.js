@@ -34,6 +34,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+        <h3>Controlled Components</h3>
         <form>
           <input
             type="text"
