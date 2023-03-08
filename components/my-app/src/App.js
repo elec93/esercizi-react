@@ -1,17 +1,12 @@
 import React from "react";
-import Login from "./Login";
-import UncontrolledLogin from "./UncontrolledLogin";
+import TodoList from "./TodoList";
 
 class App extends React.Component {
-  handleOnLogin = (state) => {
-    console.log(state);
-  };
 
   render() {
     return (
       <div>
-        <Login onLogin={this.handleOnLogin} />
-        <UncontrolledLogin onLogin={this.handleOnLogin}/>
+        <TodoList name = {["Tony","Bob","Jane" ]}/>
       </div>
     );
   }
