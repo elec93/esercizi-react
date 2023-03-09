@@ -8,20 +8,10 @@ class Login extends Component {
   };
 
   handlerInput = (event) => {
-    const inputValue =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    const name = event.target.name;
-
-    this.setState({
-      [name]: inputValue,
-    });
-  };
-
-  handleDisabled = () => {
-    return this.state.username === "" || this.state.password === "";
-  };
+    const {name, type, value, checked} = event.target
+    const valueIs = type === "checkbox" ? checked : value
+    this.setState({[name]: valueIs})
+  }
 
   render() {
     return (
@@ -47,7 +37,7 @@ class Login extends Component {
           />
           <button
             name="button"
-            disabled={this.handleDisabled()}
+            disabled={this.state.username === "" || this.state.password === "" ? true : false }
             onClick={() => this.props.onLogin(this.state)}
           >
             Login
@@ -59,3 +49,6 @@ class Login extends Component {
 }
 
 export default Login;
+
+
+
