@@ -7,8 +7,8 @@ class UncontrolledLogin extends Component {
     event.preventDefault();
     const { username, password, remember } = this._ref.current.elements;
 
-    console.log(this._ref)
-    console.log(this._ref.current)
+    console.log(this._ref);
+    console.log(this._ref.current);
 
     this.props.onLogin({
       username: username.value,
@@ -32,6 +32,7 @@ class UncontrolledLogin extends Component {
         <h3>Uncontrolled Components</h3>
         <form ref={this._ref} onSubmit={this.handleSubmit}>
           <input
+            autoFocus={true}
             onChange={this.handleInputChange}
             type="text"
             name="username"
@@ -41,10 +42,7 @@ class UncontrolledLogin extends Component {
             type="password"
             name="password"
           />
-          <input
-            type="checkbox"
-            name="remember"
-          />
+          <input type="checkbox" name="remember" />
 
           <button name="submit" type="submit" disabled={true}>
             Login
