@@ -8,33 +8,23 @@ class Login extends Component {
   };
 
   handlerInput = (event) => {
-    const inputValue =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    const name = event.target.name;
+    const {name, type, value, checked} = event.target
+    const valueIs = type === "checkbox" ? checked : value
+    this.setState({[name]: valueIs})
+  }
 
-    this.setState({
-      [name]: inputValue,
-    });
-  };
-
-  handleDisabled = () => {
-    return this.state.username === "" || this.state.password === "";
-  };
-
-  handleReset = () => {
+  handleReset = () =>{
     this.setState({
       username: "",
       password: "",
       remember: false,
-    });
-  };
-
+    })
+  }
+  
   render() {
     return (
       <div>
-        <h3>Controlled Components</h3>
+          <h3>Controlled Components</h3>
         <form>
           <input
             type="text"
@@ -56,7 +46,7 @@ class Login extends Component {
           />
           <button
             name="button"
-            disabled={this.handleDisabled()}
+            disabled={this.state.username === "" || this.state.password === "" ? true : false }
             onClick={() => this.props.onLogin(this.state)}
           >
             Login
