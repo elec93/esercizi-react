@@ -20,13 +20,20 @@ class TodoList extends Component {
     this.setState({ items: [], value: "" });
   };
 
+  removeItem = (index) => {
+      const newItemsArr = [...this.state.items];
+      newItemsArr.splice(index, 1);
+      this.setState({ items: newItemsArr });
+    };
+    
+ 
   render() {
     return (
       <div>
         <h3>List</h3>
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={item + index}>{item}</li>
+            <li key={item + index}>{item} <button onClick={this.removeItem}>-</button></li>
           ))}
         </ul>
         <input
