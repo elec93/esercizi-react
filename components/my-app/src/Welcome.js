@@ -6,7 +6,7 @@ class Welcome extends React.Component {
     return (
       <div>
         {
-          <p>
+          <p className="welcome">
             Welcome, <strong>{this.props.name}</strong>
           </p>
         }

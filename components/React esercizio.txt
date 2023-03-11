@@ -1,1 +1,1 @@
-Modify the Age component so that the "Your age is " message is rendered only if the age prop is greater than 18. Otherwise render the "You are very young!" message
+Create an index.css file and import it within the index.js file. Add a .welcome class to the Welcome component that changes its background color and adds a border.
