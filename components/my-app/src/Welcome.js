@@ -1,21 +1,18 @@
+// Rewrite the Welcome component to be a function component.
 import React from "react";
 import Age from "./Age";
 
-class Welcome extends React.Component {
-  render() {
-    return (
-      <div>
-        {
-          <p>
-            Welcome, <strong>{this.props.name}</strong>
-          </p>
-        }
-        <p>
-          <Age age={this.props.age} />
-        </p>
-      </div>
-    );
-  }
-}
+const Welcome = (props) => {
+  return (
+    <div>
+      <p>
+        Welcome, <strong>{props.name}</strong>
+      </p>
+      <p>
+        <Age age={props.age} />
+      </p>
+    </div>
+  );
+};
 
 export default Welcome;
