@@ -1,15 +1,11 @@
 import React from "react";
-import Hello from "./Hello";
-import Welcome from "./Welcome";
-
-const theName = "John";
+import Sum from "./Sum";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Hello />
-        <Welcome name={theName} age={7} />
+        <Sum numbers={[2, 2, 3]}/>
       </div>
     );
   }
