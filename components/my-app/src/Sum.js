@@ -1,13 +1,11 @@
-// Write a Sum function component that receives a numbers prop
-// (expected to be an array of numbers) and renders the sum
-// of all numbers in the array within a h1 tag.
+// What happens if the numbers prop of the Sum component is not set?
+// risposta: succede che numbers è undefined
+// How can you set a default value for this prop?
 import React from "react";
 
-const Sum = ({numbers}) => {
-  return (
-     <div>
-       <h1>{numbers.reduce((a, b) => a + b, 0)}</h1>
-    </div>
-  )}
+const Sum = ({ numbers = [2, 2, 3] }) => {
+  const result = numbers.reduce((a, b) => a + b, 0);
+  return <h1>{result}</h1>;
+};
 
 export default Sum;

@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Sum numbers={[2, 2, 3]}/>
+        <Sum />
       </div>
     );
   }
