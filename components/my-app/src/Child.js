@@ -4,7 +4,7 @@ import Container from './Container'
 class Child extends Component {
   render() {
     return (
-      <Container>ciao</Container>
+      <Container title={"Title"}>ciao</Container>
     )
   }
 }

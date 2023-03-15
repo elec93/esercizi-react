@@ -7,8 +7,9 @@ import React, { Component } from "react";
 class Container extends Component {
   render() {
     return (
-      <div style={{background: "white", border: "1px solid red"}}>
-       {this.props.children}
+      <div style={{ background: "white", border: "1px solid red" }}>
+        <h1>{this.props.title}</h1>
+       <div>{this.props.children}</div>
       </div>
     );
   }
