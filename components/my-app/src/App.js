@@ -1,4 +1,5 @@
 import React from "react";
+import Child from "./Child";
 import Container from './Container';
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Container title="Containr Title"/>
+        <Child/>
       </div>
     );
   }

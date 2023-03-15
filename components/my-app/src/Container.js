@@ -9,7 +9,6 @@ class Container extends Component {
     return (
       <div style={{background: "white", border: "1px solid red"}}>
        {this.props.children}
-       {this.props.title}
       </div>
     );
   }
