@@ -1,3 +1,9 @@
+// Modify the TodoList component so that, instead of rendering the items array within the ul tag, 
+//it calls the function passed to its render prop, passing it the items array as a parameter, 
+//as well as the function required to delete the item. Pass a render prop to the TodoList component 
+//to correctly render and interact with the items array.
+
+
 import React, { Component } from "react";
 
 class TodoList extends Component {
@@ -29,14 +35,16 @@ class TodoList extends Component {
     return (
       <div>
         <h3>List</h3>
-        <ul>
+        {/* <ul>
           {this.state.items.map((item, index) => (
             <li key={item + index}>
               {item}
               <button onClick={this.handlerRemoveItem(item)}>-</button>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        {/*passo come argomenti l items e la funzione che rimuove*/}
+        {this.props.render(this.state.items, this.handlerRemove)} 
         <input
           type="text"
           value={this.state.value}
