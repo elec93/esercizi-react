@@ -6,8 +6,6 @@ function App (){
   function onCounterChange(counter){
     console.log(counter);
   }
-
-  
     return (
       <div>
         <ClickCounter onCounterChange={onCounterChange} />
