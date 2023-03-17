@@ -1,14 +1,19 @@
 import React from "react";
 import ClickCounter from "./ClickCounter";
 
-class App extends React.Component {
-  render() {
+function App (){
+
+  function onCounterChange(counter){
+    console.log(counter);
+  }
+
+  
     return (
       <div>
-        <ClickCounter />
+        <ClickCounter onCounterChange={onCounterChange} />
       </div>
     );
-  }
+  
 }
 
 export default App;
