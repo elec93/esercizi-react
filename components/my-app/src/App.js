@@ -1,35 +1,11 @@
 import React from "react";
-import TodoList from "./TodoList";
+import Counter from "./Counter";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoList
-          render={(items, handlerRemove) => {
-            return <ul>
-              {items.map((item, index) => (
-                <li key={item + index}>
-                  {item}
-                  <button onClick={()=> handlerRemove(index)}>-</button>
-                </li>
-              ))}
-            </ul>
-          }}
-        />
-        {/*secondo todolist esempio*/}
-        <TodoList
-          render={(items, handlerRemove) => {
-            return <ul>
-              {items.reverse().map((item, index) => (
-                <li key={item + index}>
-                  {item}
-                  <button onClick={()=> handlerRemove(index)}>-</button>
-                </li>
-              ))}
-            </ul>
-          }}
-        />
+        <Counter />
       </div>
     );
   }
