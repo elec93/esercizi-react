@@ -1,11 +1,11 @@
 import React from "react";
-import Counter from "./Counter";
+import Login from "./Login";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter />
+        <Login />
       </div>
     );
   }
