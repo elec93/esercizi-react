@@ -1,11 +1,11 @@
 import React from "react";
-import Counter from "./Counter";
+import GithubUser from "./GithubUser";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Counter />
+        <GithubUser username={"elec93"} />
       </div>
     );
   }
