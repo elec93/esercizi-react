@@ -1,47 +1,45 @@
 // Create a GithubUser component that fetches the data of the username passed as a prop,
 // and renders some of the data within a div tag.
 // The API to query is https://api.github.com/users/${username}.
+import { useState, useEffect } from "react";
 
-import { useEffect, useState } from "react";
-
-export default function GithubUser({ username }) {
-  const [user, setUser] = useState(null);
+function GithubUser({ username }) {
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getGithubUser(username);
+    setLoading(true);
+    getData();
   }, [username]);
 
-  async function getGithubUser(username) {
-    setLoading(true);
-    setError(null);
-
+  async function getData() {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
       const json = await response.json();
-      if (response.status !== 200) {
-        setError(json.message);
-      }
-      setUser(json);
+      setData(json);
     } catch (error) {
       setError(error);
-      setUser(null);
     } finally {
       setLoading(false);
     }
   }
 
+  if (error) {
+    return <div>Errore: {error.message}</div>;
+  }
+
   return (
     <div>
-      {error && <div>{error}</div>}
-      {loading && <div>is loading...</div>}
-      {user && !error && (
+      {loading && <p>Loading...</p>}
+      {data && (
         <div>
-          {user.name}
-          <img src={user.avatar_url} />
+          <h3>{data.name}</h3>
+          <img src={data.avatar_url} />
         </div>
       )}
     </div>
   );
 }
+
+export default GithubUser;
