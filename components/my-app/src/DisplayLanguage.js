@@ -1,6 +1,5 @@
-// Create a LanguageContext and wrap a DisplayLanguage component within its provider. 
-// Add a select tag to the component containing the DisplayLanguage component that allows 
-// the user to select the language, and pass it as a value to the Provider.
+// Consume the LanguageContext within the DisplayLanguage component 
+// by using the context consumer, and show the selected language in an h1 tag.
 
 import React from 'react'
 import { LanguageContext } from './LanguageContext'
@@ -20,7 +19,7 @@ class DisplayLanguage extends React.Component {
       <div>
         <LanguageContext.Consumer>
         { (language) =>(
-            <div>{String[language].greetings}</div>
+            <h1>{String[language].greetings}</h1>
         )}
         </LanguageContext.Consumer>
       </div>
