@@ -1,30 +1,27 @@
 import React from "react";
-import Clock from "./Clock";
 import { LanguageContext } from "./LanguageContext";
-
+import DisplayLanguage from "./DisplayLanguage";
 
 class App extends React.Component {
-
   state = {
-    language: "en"
-  }
+    language: "en",
+  };
 
-  handleLanguage = (event) =>{
-    this.setState.state({
-      language: event.target.language
-
-    })
-  }
+  handleChangeLang = (event) => {
+    this.setState({
+      language: event.target.value,
+    });
+  };
   render() {
     return (
       <div>
-        <select value={this.state.language} on onChange={this.handleLanguage}>
-          <option value="en">english</option>
-          <option value="it">italiano</option>
+        <select onChange={this.handleChangeLang} value={this.state.language}>
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
         </select>
-        <Clock />
-        <LanguageContext.Provider value ={this.state.language}></LanguageContext.Provider>
-    
+        <LanguageContext.Provider value={this.state.language}>
+          <DisplayLanguage />
+        </LanguageContext.Provider>
       </div>
     );
   }
