@@ -6,13 +6,33 @@ import GithubUser from "./GithubUser";
 
 function GithubUserList() {
   const [usernames, setUsernames] = useState([]);
+  const [usernameInput, setUsernameInput] = useState("");
 
-  setUsernames(() => {
-    
-  })
+  const handleInputChange = (event) => {
+    setUsernameInput(event.target.value);
+  };
+
+  const handleAddUser = () => {
+    if (usernameInput) {
+      setUsernames([...usernames, usernameInput]);
+      setUsernameInput("");
+    }
+  };
+
   return (
-    <GithubUser />
-  )
+    <div>
+      <div>
+        <input type="text" value={usernameInput} onChange={handleInputChange} />
+        <button onClick={handleAddUser}>Add User</button>
+      </div>
+      <div>
+        {usernames.map((username) => (
+          <GithubUser key={username} username={username} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default GithubUserList
+export default GithubUserList;
+
