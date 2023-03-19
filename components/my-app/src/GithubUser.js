@@ -1,23 +1,11 @@
-// Create a GithubUser component that fetches the data of the username
-//  passed as a prop, and renders some of the data within a div tag.
-//  The API to query is https://api.github.com/users/${username}.
-
-import React, { useState, useEffect } from "react";
+// Extract the logic to fetch a Github user's data from the GithubUser component from useEffect 03 into a custom hook called useGithubUser.
+import { useEffect } from "react";
+import { useGithubUser } from "./useGithubUser";
 
 function GithubUser({ username }) {
-  const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
+  const { getData, user, error } = useGithubUser(username);
 
   useEffect(() => {
-    async function getData() {
-        try{
-            const response = await fetch(`https://api.github.com/users/${username}`);
-            const jsonData = await response.json();
-            setUser(jsonData);
-          }catch(error){
-            setError(error);
-          }
-        }  
     getData();
   }, [username]);
 
