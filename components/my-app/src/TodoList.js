@@ -44,7 +44,6 @@ class TodoList extends Component {
             </li>
           ))}
         </ul> */}
-        {/*passo come argomenti l items e la funzione che rimuove*/}
         {this.props.render(this.state.items, this.handlerRemove)} 
         <input
           type="text"

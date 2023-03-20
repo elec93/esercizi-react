@@ -17,19 +17,6 @@ class App extends React.Component {
             </ul>
           }}
         />
-        {/*secondo todolist esempio*/}
-        <TodoList
-          render={(items, handlerRemove) => {
-            return <ul>
-              {items.reverse().map((item, index) => (
-                <li key={item + index}>
-                  {item}
-                  <button onClick={()=> handlerRemove(index)}>-</button>
-                </li>
-              ))}
-            </ul>
-          }}
-        />
       </div>
     );
   }
