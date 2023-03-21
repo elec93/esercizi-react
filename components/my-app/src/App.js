@@ -1,13 +1,13 @@
 import React from "react";
 import GithubUser from "./GithubUser";
 import GithubUserList from "./GithubUserList";
+import HookCounter from "./HookCounter";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <GithubUser username={"elec93"} />
-        <GithubUserList />
+      <HookCounter initialValue={0}/>
       </div>
     );
   }
