@@ -1,30 +1,26 @@
-// Consume the LanguageContext within the DisplayLanguage component 
-// by using the context consumer, and show the selected language in an h1 tag.
+// Rewrite the DisplayLanguage component from Context 02
+// to be a function component, and access the LanguageContext
+// through the useContext hook.
+import { useContext } from "react";
+import { LanguageContext } from "./LanguageContext";
 
-import React from 'react'
-import { LanguageContext } from './LanguageContext'
+const translation = {
+  en: {
+    greetings: "Hello and welcome to Italy",
+  },
+  it: {
+    greetings: "Ciao e benvenuto in Italia",
+  },
+};
 
-const String = {
-    en: {
-        greetings: "Hello and welcome to Italy"
-    },
-    it: {
-        greetings: "Ciao e benvenuto in Italia"
-    }
+function DisplayLanguage() {
+  const language = useContext(LanguageContext);
+ 
+  return (
+    <div>
+      <h1>{translation[language].greetings}</h1>
+    </div>
+  );
 }
 
-class DisplayLanguage extends React.Component {
-  render() {
-    return (
-      <div>
-        <LanguageContext.Consumer>
-        { (language) =>(
-            <h1>{String[language].greetings}</h1>
-        )}
-        </LanguageContext.Consumer>
-      </div>
-    )
-  }
-}
-
-export default DisplayLanguage
+export default DisplayLanguage;
