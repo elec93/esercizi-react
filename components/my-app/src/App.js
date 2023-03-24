@@ -9,18 +9,7 @@ import ShowGithubUser from "./ShowGithubUser";
 function App() {
   return (
     <>
-        <ul style={{display:'flex', flexDirection:'row', gap:20}}>
-          <li>
-            <Link to="/">Go to welcome</Link>
-          </li>
-          <li>
-            <Link to="/counter">Go to counter</Link>
-          </li>
-          <li>
-            <Link to="/users/:username">Go to user</Link>
-          </li>
-        </ul>
-  
+      <Link to="/">Go to welcome</Link> | <Link to="/counter">Go to counter</Link> | <Link to="/users/:username">Go to user</Link>
       <Routes>
         <Route path="/" element={<Welcome name="Ele" />} />{" "}
         <Route path="/counter" element={<Counter counter={0} />} />
