@@ -1,21 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 export function Welcome() {
-  const [name, setName] = useState("");
-  const inputRef = useRef(null);
+  const { name= "Default Name" } = useParams();
+  const navigate = useNavigate();
 
-function handleChange(event){
-    setName(event.target.value)
-}
-
-useEffect(() => {
-    inputRef.current.focus()
-},[])
-
-  return <div>
-    <input ref={inputRef} type="text" value={name} onChange={handleChange}></input>
-    {name && <h1>Welcome, {name}!</h1>}
-  </div>;
+  function handleLoginClick() {
+    navigate("/login");
+  }
+  return (
+    <div>
+      <h1>Welcome, {name}!</h1>
+      <Link to="/login">login to app</Link>
+      <div>
+        <button onClick={handleLoginClick}>enter the app</button>
+      </div>
+    </div>
+  );
 }
 
 export default Welcome;
