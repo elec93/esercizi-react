@@ -1,20 +1,11 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import React from "react";
 
-export function Welcome() {
-  const { name= "Default Name" } = useParams();
-  const navigate = useNavigate();
-
-  function handleLoginClick() {
-    navigate("/login");
-  }
+function Welcome(props) {
   return (
     <div>
-      <h1>Welcome, {name}!</h1>
-      <Link to="/login">login to app</Link>
-      <div>
-        <button onClick={handleLoginClick}>enter the app</button>
-      </div>
+      <p>
+        Welcome, {props.name}!
+      </p>
     </div>
   );
 }
