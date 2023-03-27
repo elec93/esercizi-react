@@ -4,7 +4,7 @@ import { useGithubUser } from "./useGithubUser";
 
 
 function GithubUser({ username }) {
-  const { user, error } = useGithubUser(username);
+  const { user, error, onRefresh } = useGithubUser(username);
 
   // useEffect(() => {
   //   getData();
@@ -20,6 +20,7 @@ function GithubUser({ username }) {
 
   return (
     <div>
+      <button onClick={onRefresh}>Refresh</button>
       <h4>{user.name}</h4>
       <img src={user.avatar_url} />
     </div>
