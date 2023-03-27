@@ -1,13 +1,14 @@
-// Extract the logic to fetch a Github user's data from the GithubUser component from useEffect 03 into a custom hook called useGithubUser.
+// Modify the useGithubUser custom hook from Custom Hooks 03 to use the useSWR hook to fetch the data of a Github user.
 import { useEffect } from "react";
 import { useGithubUser } from "./useGithubUser";
 
-function GithubUser({ username }) {
-  const { getData, user, error } = useGithubUser(username);
 
-  useEffect(() => {
-    getData();
-  }, [username]);
+function GithubUser({ username }) {
+  const { user, error } = useGithubUser(username);
+
+  // useEffect(() => {
+  //   getData();
+  // }, [username]);
 
   if (error) {
     return <div>There's an error: {error.message}</div>;
