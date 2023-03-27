@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import ShowGithubUser from "./ShowGithubUser";
 
 function GithubUserList() {
   const [usernames, setUsernames] = useState([]);
@@ -16,24 +17,27 @@ function GithubUserList() {
     }
   };
 
-  return (
+
+return (
+  <div>
     <div>
-      <div>
-        <input type="text" value={usernameInput} onChange={handleInputChange} />
-        <button onClick={handleAddUser}>Add User</button>
-      </div>
-      <div>
-        {usernames.map((username) => (
-          <li key={username}>
-            <Link to={`/users/${username}`}>{username}</Link>
-          </li>
-        ))}
-      </div>
-      <Routes>
-        <Route path="/:username" element={<ShowGithubUser />} />
-      </Routes>
+      <input type="text" value={usernameInput} onChange={handleInputChange} />
+      <button onClick={handleAddUser}>Add User</button>
     </div>
-  );
+    <div>
+      {usernames.map((username) => (
+        <li key={username}>
+          <Link to={`/${username}`}>{username}</Link>
+        </li>
+      ))}
+    </div>
+    <Routes>
+      <Route path="/" element={<h3>Select</h3>} />
+      <Route path="/:username" element={<ShowGithubUser />} />
+    </Routes>
+  </div>
+);
 }
 
 export default GithubUserList;
+
